@@ -1,0 +1,219 @@
+%------------------------
+% One-page resume -- revised with reviewer feedback
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[
+left=0.45in,
+right=0.45in,
+top=0.37in,
+bottom=0.1in
+]{geometry}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath}
+\usepackage{microtype}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{7pt}
+
+\urlstyle{rm}
+\raggedright
+\setlength{\tabcolsep}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% --------- SECTION FORMATTING ---------
+\titleformat{\section}
+{\fontsize{14}{14.5}\selectfont\scshape\raggedright\bfseries}
+{}{0em}{}
+[\color{black}\titlerule \vspace{-3pt}]
+
+\titlespacing*{\section}{0pt}{4pt}{3pt}
+
+% --------- EXPERIENCE / RESEARCH HEADERS ---------
+\newcommand{\resumeSubheading}[4]{
+\vspace{2pt}
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+\textbf{#1} & #2 \\
+\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-5pt}
+}
+
+% --------- PROJECT HEADERS ---------
+\newcommand{\resumeProjectHeading}[2]{
+\vspace{2pt}
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+\textbf{#1} & \textit{#2} \\[-3pt]
+\end{tabular*}
+\vspace{-11pt}
+}
+
+% --------- PROJECT BULLETS ---------
+\newcommand{\resumeProjectItemListStart}{
+\begin{itemize}[
+leftmargin=0.17in,
+itemsep=0pt,
+topsep=-2pt,
+parsep=0pt,
+partopsep=0pt
+]
+}
+
+\newcommand{\resumeProjectItemListEnd}{
+\end{itemize}\vspace{0pt}
+}
+
+% --------- EXPERIENCE / RESEARCH BULLETS ---------
+\newcommand{\resumeItemListStart}{
+\begin{itemize}[
+leftmargin=0.17in,
+label=\textbullet,
+itemsep=0pt,
+topsep=0pt,
+parsep=0pt,
+partopsep=0pt
+]
+}
+
+\newcommand{\resumeItemListEnd}{
+\end{itemize}\vspace{-1pt}
+}
+
+%-----------------------------
+\begin{document}
+
+%----------HEADING-----------------
+\begin{center}
+{\LARGE \textbf{\scshape Shivani Swaminathan}} \\[-1pt]
+\small
+678-800-6094 $|$
+\href{mailto:sswaminathan67@gatech.edu}
+{\underline{sswaminathan67@gatech.edu}} $|$
+\href{https://www.linkedin.com/in/shivani-swaminathan-gatech}
+{\underline{linkedin.com/in/shivani}} $|$
+\underline{US Citizen}
+\end{center}
+
+\vspace{-7pt}
+
+%-----------EDUCATION-----------------
+\section{Education}
+
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+\textbf{Georgia Institute of Technology} & Atlanta, GA \\
+\textit{Bachelor of Science / Master of Science in Aerospace Engineering} &
+\textit{B.S. Fall 2027 $|$ M.S. Fall 2028} \\
+\end{tabular*}
+
+\vspace{0pt}
+
+\textit{GPA: 3.78/4.0 $|$ Dean's List $|$ Relevant Coursework: Aerodynamics, Structural Analysis, Fluids, Thermodynamics, Mechanics of Materials}
+
+\vspace{2pt}
+
+%-----------RESEARCH-----------------
+\section{Research}
+
+\resumeSubheading
+{Ben T. Zinn Combustion Laboratory}{Atlanta, GA}
+{Undergraduate Research Assistant}{May 2026 -- Present}
+\resumeItemListStart
+\item Improved combustor-model fidelity by 18\% across 8 steady and transient ANSYS Fluent cases by refining 19M-cell meshes and configuring reacting-flow physics for higher-confidence combustion predictions.
+\item Validated 3 combustor cases by analyzing temperature, pressure, velocity, and species results with ANSYS engineers, leading to 4 model and setup corrections and a more reliable simulation baseline.
+\resumeItemListEnd
+
+\resumeSubheading
+{GT Aerospace Systems Design Laboratory (ASDL)}{Atlanta, GA}
+{Undergraduate Research Assistant -- Systems Modeling}{August 2025 -- Present}
+\resumeItemListStart
+\item Eliminated 2 infeasible Mars rover concepts after SysML models exposed violations in mass, power, torque, and climb requirements across 5+ subsystems, preventing further analysis of nonviable designs.
+\item Reduced the rover design trade space by 30\% through 30+ ModelCenter sensitivity runs on slope, wheel--soil interaction, traction, and power margins, focusing further analysis on feasible concepts.
+\resumeItemListEnd
+
+\resumeSubheading
+{GT Aerospace Systems Design Laboratory (ASDL)}{Atlanta, GA}
+{Undergraduate Research Assistant -- AI/ML}{June 2026 -- Present}
+\resumeItemListStart
+\item Developed a Python AI agent that expanded a lunar-base simulation to 12+ autonomous construction tasks, automating landing-pad sequencing, equipment allocation, and task dependencies for repeatable mission-plan evaluation.
+\item Integrated 4 lunar infrastructure models across 4 mission scenarios by defining dependencies among landing-pad construction, in-situ resource utilization (ISRU) mining, and power operations, enabling end-to-end surface construction simulation.
+\resumeItemListEnd
+
+\resumeSubheading
+{UGA Department of Physics and Astronomy}{Athens, GA}
+{Undergraduate Research Assistant}{August 2024 -- May 2025}
+\resumeItemListStart
+\item Analyzed 200+ stellar-flare light curves in Python and modeled activity decay across 3 spectral classes in MATLAB, reducing processing time by 36\% and earning an undergraduate research award.
+\resumeItemListEnd
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+
+\resumeSubheading
+{GT HyTech Racing}{Atlanta, GA}
+{Aerodynamics Engineer}{August 2025 -- Present}
+\resumeItemListStart
+\item Validated carbon-fiber wing assemblies across 6+ ride-height and angle-of-attack cases in ANSYS Fluent, identifying up to 18\% downforce and 11\% drag variation to select competition wing ride height and angle of attack.
+\item Reduced analysis turnaround by 36\% by automating ANSYS Fluent post-processing in Python, enabling same-day comparison of 8+ aerodynamic designs for faster design decisions.
+\resumeItemListEnd
+
+\resumeSubheading
+{Handshake AI}{Remote}
+{CAD Specialist -- OpenAI-Sponsored AI Evaluation Project}{March 2026 -- Present}
+\resumeItemListStart
+\item Developed 25+ CAD benchmark tasks and weighted rubrics in SolidWorks, Siemens NX, and AutoCAD to evaluate AI-generated parts, assemblies, and drawings against measurable geometry, dimensioning, and deliverable criteria.
+\item Evaluated 40+ developer-created CAD benchmarks and identified 60+ dimensional, manufacturability, feature-quality, and deliverable issues, improving task clarity and scoring consistency before AI model testing.
+\resumeItemListEnd
+
+%-----------PROJECTS-----------------
+\section{Projects}
+
+\resumeProjectHeading
+{Wind Turbine Blade Fluid--Structure Interaction Analysis}
+{July 2026}
+\resumeProjectItemListStart
+\item Integrated CFD and FEA across 6 operating conditions by transferring ANSYS Fluent pressure loads into ANSYS Mechanical, linking aerodynamic loads to blade stress and deformation while validating root radial force within 0.1\% of hand calculations.
+\resumeProjectItemListEnd
+
+\resumeProjectHeading
+{Unified Aerodynamic Analysis Tool}
+{August 2026}
+\resumeProjectItemListStart
+\item Developed a MATLAB aerodynamic solver combining Prandtl--Glauert-corrected thin-airfoil and shock-expansion theory, then searched 45,000+ configurations to optimize a double-wedge airfoil across subsonic and supersonic regimes.
+\resumeProjectItemListEnd
+
+\resumeProjectHeading
+{CubeSat Frame \& Attitude Control Design}
+{January 2025 -- March 2025}
+\resumeProjectItemListStart
+\item Reduced CubeSat frame mass by 10\% by iterating structural layout against 5g stiffness, safety-factor, and buckling constraints in ANSYS; developed a MATLAB/Simulink PD controller achieving 3-axis stabilization.
+\resumeProjectItemListEnd
+
+%-----------SKILLS-----------------
+\section{Skills}
+
+\vspace{+3pt}
+\small
+
+\textbf{Simulation:}
+ANSYS Fluent (CFD), ANSYS Mechanical (FEA), Simscape Multibody \\
+
+\textbf{3D Modeling:}
+SolidWorks (CSWA), CATIA, Inventor, AutoCAD, Fusion 360, Siemens NX \\
+
+\textbf{Systems Engineering:}
+MagicDraw/Cameo (SysML), ModelCenter, Simulink \\
+
+\textbf{Programming:}
+MATLAB (Certified MATLAB Associate), Python, Git
+
+\end{document}

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivani Swaminathan | Engineering Portfolio</title>
+    <link rel="stylesheet" href="portfolio-print.css">
+</head>
+<body>
+
+<main class="portfolio">
+
+    <section class="page cover-page">
+        <div class="cover-rule"></div>
+        <div class="cover-top">
+            <img class="portrait" src="images/profile.jpg" alt="Shivani Swaminathan">
+            <div class="cover-identity">
+                <p class="eyebrow">ENGINEERING PORTFOLIO</p>
+                <h1>Shivani<br>Swaminathan</h1>
+                <p class="degree">Georgia Institute of Technology<br>BS Aerospace Engineering, 2027<br>MS Aerospace Engineering, 2028</p>
+            </div>
+        </div>
+
+        <div class="cover-statement">
+            <p>
+                BS/MS aerospace engineering student with experience across computational fluid dynamics,
+                structural analysis, model based systems engineering, CAD, and computing.
+                This portfolio presents selected work in simulation based aerospace design and analysis.
+            </p>
+        </div>
+
+        <div class="cover-contact">
+            <span>sswaminathan67@gatech.edu</span>
+            <span>linkedin.com/in/shivani-swaminathan-gatech</span>
+        </div>
+        <footer class="page-footer"><span>01</span></footer>
+    </section>
+
+    <section class="page project-page combustion-page-one">
+        <header class="project-header">
+            <div><p class="eyebrow">01 </p><h1>Combustion CFD Research</h1></div>
+            <p class="project-lead">A staged ANSYS Fluent workflow that progressed from industry-provided baseline files through FGM, nonreacting LES, and a fully converged reacting LES case.</p>
+        </header>
+
+        <figure class="hero-figure dark-figure">
+            <img src="images/cfd_reacting_temp_graphic.png" alt="Final reacting LES temperature field">
+            <figcaption>Final reacting LES temperature field on a longitudinal combustor plane. The elevated-temperature region follows the developing reaction zone from the injector into the chamber.</figcaption>
+        </figure>
+
+        <div class="metric-row four">
+            <div><span>MESH SCALE</span><strong>19M cells</strong></div>
+            <div><span>CASE CAMPAIGN</span><strong>8 cases</strong></div>
+            <div><span>REACTING RUN</span><strong>20 steps</strong></div>
+            <div><span>TIME STEP</span><strong>1 x 10<sup>-7</sup> s</strong></div>
+        </div>
+
+        <div class="two-column narrative-columns">
+            <article>
+                <h2>Building fidelity in stages</h2>
+                <p>I reviewed the provided baseline files, rebuilt the chemistry and operating setup in ANSYS Fluent 2025 R2, and stabilized the FGM solution before moving to LES. The developed nonreacting flow and mixing field then became the starting point for the reacting case.</p>
+                <p>This staged approach preserved resolved flow structures while reaction was introduced through the FGM progress variable, rather than asking the turbulence and chemistry models to settle simultaneously.</p>
+            </article>
+            <article>
+                <h2>Physics and operating setup</h2>
+                <p>I configured hydrogen-air chemistry from the supplied CHEMKIN mechanism and generated the flamelet/PDF data required by Fluent's partially premixed FGM formulation. The setup used 627 K inlet streams and an operating pressure of 1,378,950 Pa.</p>
+                <p>The turbulence model was advanced from SST k-omega to LES with the WALE subgrid-scale model and a transient formulation.</p>
+            </article>
+        </div>
+        <footer class="page-footer"><span>02</span></footer>
+    </section>
+
+    <section class="page project-page combustion-page-two">
+        <header class="continuation-header"><p class="eyebrow">01 </p><h1>Mesh, case progression, and reacting solution</h1></header>
+
+        <div class="figure-grid three mesh-grid">
+            <figure><img src="images/cfd_model.png" alt="Combustor computational domain"><figcaption>Computational domain with the injector feeding the cylindrical combustor.</figcaption></figure>
+            <figure><img src="images/cfd_centerplane_mesh.png" alt="Combustor center-plane mesh"><figcaption>Center-plane mesh used to inspect resolution and zone interfaces.</figcaption></figure>
+            <figure><img src="images/cfd_injector_mesh.png" alt="Local injector mesh refinement"><figcaption>Local refinement at the injector and chamber junction.</figcaption></figure>
+        </div>
+
+        <div class="section-copy compact-copy">
+            <h2>Developing the flowfield before reaction</h2>
+            <p>The approximately 19 million cell mesh concentrated resolution around the small fuel passage and its intersection with the larger chamber. I checked the domain, zone assignments, connectivity, and local resolution before configuring combustion. The nonreacting FGM-LES case allowed the transient jet and chamber flow to develop while the progress variable remained zero, giving the reacting branch a stable baseline.</p>
+        </div>
+
+        <div class="figure-grid three result-grid">
+            <figure><img src="images/cfd_nonreacting_velocity_graphic.png" alt="Nonreacting LES velocity"><figcaption>Nonreacting velocity</figcaption></figure>
+            <figure><img src="images/cfd_nonreacting_temp_graphic.png" alt="Nonreacting baseline temperature"><figcaption>Baseline temperature</figcaption></figure>
+            <figure><img src="images/cfd_nonreacting_progressvariable_graphic.png" alt="Nonreacting progress variable"><figcaption>Nonreacting progress variable</figcaption></figure>
+            <figure><img src="images/cfd_reacting_velocity_graphic.png" alt="Reacting LES velocity"><figcaption>Reacting velocity</figcaption></figure>
+            <figure><img src="images/cfd_reacting_temp_graphic.png" alt="Reacting LES temperature"><figcaption>Reacting temperature</figcaption></figure>
+            <figure><img src="images/cfd_reacting_progressvariable_graphic.png" alt="Reacting LES progress variable"><figcaption>Reaction progress</figcaption></figure>
+        </div>
+
+        <div class="two-column lower-copy">
+            <article>
+                <h2>Final reacting LES</h2>
+                <p>I built the final reacting case directly from the nonreacting LES solution and advanced it for 20 time steps at 1 x 10<sup>-7</sup> s per step. The reacting field reached approximately 2,790 K, while the progress variable identified the reacted region and flame structure.</p>
+            </article>
+            <aside class="outcome-box">
+                <p class="eyebrow">OUTCOME</p>
+                <p>Across eight cases, I compared temperature, pressure, velocity, and species behavior. Reviews of three combustor cases with ANSYS engineers produced four setup corrections, improving model fidelity by 18% and creating a more dependable baseline for later analysis.</p>
+            </aside>
+        </div>
+        <footer class="page-footer"><span>03</span></footer>
+    </section>
+
+    <section class="page project-page wind-page-one">
+        <header class="project-header">
+            <div><p class="eyebrow">02</p><h1>Wind Turbine Blade FSI</h1></div>
+            <p class="project-lead">A steady state, one way fluid-structure interaction analysis connecting the surrounding airflow to blade pressure loading and structural response.</p>
+        </header>
+
+        <figure class="hero-figure">
+            <img src="images/wind-turbine-cfd-result-pressure-contour.png" alt="Wind turbine blade pressure contour">
+            <figcaption>Pressure distribution from the converged Fluent solution. This distributed aerodynamic surface load becomes the input to the structural model.</figcaption>
+        </figure>
+
+        <div class="two-column narrative-columns">
+            <article>
+                <h2>Defining the aerodynamic model</h2>
+                <p>The roughly 43 m blade transitions from a cylindrical root into S818, S825, and S826 airfoil sections, with spanwise twist and a 4-degree pitch angle at the tip. Threefold periodicity allowed one third of the rotor domain to represent the complete system.</p>
+                <p>A 12 m/s inlet and 2.22 rad/s rotational speed produce a tip-speed ratio near 8. I used a rotating reference frame with the SST k-omega turbulence model, a pressure outlet, no slip blade walls, and periodic side faces.</p>
+            </article>
+            <article>
+                <h2>Checking the CFD solution</h2>
+                <p>I monitored convergence, mass balance, pressure behavior, and mesh refinement before transferring loads. The simulated blade-tip velocity was 98.05 m/s compared with 98.12 m/s from the hand calculation.</p>
+                <figure class="inset-figure"><img src="images/wind-turbine-cfd-result-velocity-streamlines.png" alt="Velocity streamlines around the blade"><figcaption>Three-dimensional flow response around the rotating blade.</figcaption></figure>
+            </article>
+        </div>
+
+        <div class="metric-row three">
+            <div><span>INLET SPEED</span><strong>12 m/s</strong></div>
+            <div><span>CFD TIP VELOCITY</span><strong>98.05 m/s</strong></div>
+            <div><span>HAND CALCULATION</span><strong>98.12 m/s</strong></div>
+        </div>
+        <footer class="page-footer"><span>04</span></footer>
+    </section>
+
+    <section class="page project-page wind-page-two">
+        <header class="continuation-header"><p class="eyebrow">02 </p><h1>Load transfer and structural verification</h1></header>
+
+        <figure class="wide-figure workflow-figure">
+            <img src="images/wind-turbine-cfd-to-fea-coupling-workflow.png" alt="ANSYS Workbench CFD-to-FEA coupling workflow">
+            <figcaption>The Fluent solution supplies the spatially varying pressure field used by the downstream Mechanical model.</figcaption>
+        </figure>
+
+        <div class="two-column middle-copy">
+            <article>
+                <h2>Preserving the aerodynamic load path</h2>
+                <p>The Workbench connection imported the pressure calculated on the wetted blade surfaces directly as a structural pressure load. Because structural deformation was not returned to the fluid model, the workflow remained a one-way coupling.</p>
+            </article>
+            <article>
+                <h2>Building the structural representation</h2>
+                <p>I modeled an orthotropic composite outer shell and internal spar with spanwise thickness variation. The Mechanical setup combined the composite properties, rotational velocity, fixed root, and imported aerodynamic pressure.</p>
+            </article>
+        </div>
+
+        <div class="figure-grid two structural-grid">
+            <figure><img src="images/wind-turbine-fea-result-structural-deformation.png" alt="Blade total deformation result"><figcaption>Total deformation under rotational and aerodynamic loading.</figcaption></figure>
+            <figure><img src="images/wind-turbine-fea-result-structural-stress.png" alt="Blade structural stress result"><figcaption>Equivalent stress used to identify highly loaded regions.</figcaption></figure>
+        </div>
+
+        <div class="validation-band">
+            <div><span>ANSYS ROOT RADIAL FORCE</span><strong>1,578.1 kN</strong></div>
+            <div><span>HAND CALCULATION</span><strong>1,576.3 kN</strong></div>
+            <div><span>DIFFERENCE</span><strong>about 0.1%</strong></div>
+            <p>The mesh refinement study also showed that the baseline CFD mesh was not fully mesh independent for power prediction, reinforcing the need to verify numerical convergence rather than rely only on smooth contours.</p>
+        </div>
+        <footer class="page-footer"><span>05</span></footer>
+    </section>
+
+    <section class="page project-page rover-page">
+        <header class="project-header">
+            <div><p class="eyebrow">03</p><h1>Mars Rover Mobility Modeling</h1></div>
+            <p class="project-lead">An executable SysML representation of the Opportunity Rover mobility subsystem, connecting architecture, engineering constraints, parametric simulation, and system-level feasibility.</p>
+        </header>
+
+        <figure class="wide-figure rover-architecture">
+            <img src="images/mbse-full-bdd.jpg" alt="Mars rover block definition diagram">
+            <figcaption>Full block definition diagram showing six major rover subsystems and their relationships.</figcaption>
+        </figure>
+
+        <div class="two-column rover-copy">
+            <article>
+                <h2>My responsibility: mobility</h2>
+                <p>I developed the mobility block in MagicDraw, assigned value properties and units, and modeled the relationships needed to determine whether the rover could move across Martian terrain while satisfying torque, traction, speed, power, and climb constraints.</p>
+                <div class="equation-list">
+                    <p><strong>Torque</strong><span>T = Fr</span></p>
+                    <p><strong>Traction</strong><span>F<sub>max</sub> = mu mg cos(theta)</span></p>
+                    <p><strong>Speed</strong><span>v = omega r</span></p>
+                    <p><strong>Power</strong><span>P = eta T(v/r)</span></p>
+                    <p><strong>Climb limit</strong><span>theta<sub>max</sub> = atan(mu)</span></p>
+                </div>
+            </article>
+            <figure class="tall-figure"><img src="images/mbse-mobility-parametric.png" alt="Mobility subsystem parametric diagram"><figcaption>Bound variables propagate through torque, traction, power, speed, and climb relationships.</figcaption></figure>
+        </div>
+
+        <div class="metric-row five rover-metrics">
+            <div><span>SPEED</span><strong>0.50 m/s</strong></div>
+            <div><span>TORQUE</span><strong>12 N m</strong></div>
+            <div><span>POWER</span><strong>21.6 W</strong></div>
+            <div><span>TRACTION</span><strong>387.2 N</strong></div>
+            <div><span>MAX CLIMB</span><strong>about 31 deg</strong></div>
+        </div>
+
+        <aside class="outcome-box horizontal-outcome"><p class="eyebrow">OUTCOME</p><p>More than 30 cases evaluated climb angle, traction, wheel-soil limits, and power consumption. The executable architecture allowed changes in terrain, mass, wheel properties, and power assumptions to propagate through the model and expose feasibility limits before physical testing.</p></aside>
+        <footer class="page-footer"><span>06</span></footer>
+    </section>
+
+    <section class="page project-page aero-page">
+        <header class="project-header">
+            <div><p class="eyebrow">04</p><h1>Unified Aerodynamic Analysis Tool</h1></div>
+            <p class="project-lead">A MATLAB solver for a two dimensional double wedge airfoil that selects a valid model by Mach regime, calculates aerodynamic coefficients, runs parametric studies, and searches for an efficient design.</p>
+        </header>
+
+        <div class="aero-top">
+            <figure class="design-map"><img src="images/aero-tool-design-map.png" alt="Supersonic aerodynamic design space"><figcaption>Design search at Mach 1.52. Detached-shock cases were rejected automatically.</figcaption></figure>
+            <div class="model-routing">
+                <h2>One workflow, regime-appropriate physics</h2>
+                <p><strong>Subsonic, M &lt; 0.8</strong><br>Linearized thin airfoil theory with Prandtl-Glauert compressibility correction.</p>
+                <p><strong>Transonic, 0.8-1.2</strong><br>The solver stops rather than returning a result outside model validity.</p>
+                <p><strong>Supersonic, M &gt; 1.2</strong><br>Panel-by-panel shock expansion theory using oblique shocks and Prandtl-Meyer expansions.</p>
+            </div>
+        </div>
+
+        <div class="figure-grid two aero-grid">
+            <figure><img src="images/aero-tool-lift-angle-comparison.png" alt="Subsonic and supersonic lift comparison"><figcaption>Lift response below and above Mach 1.</figcaption></figure>
+            <figure><img src="images/aero-tool-panel-pressure.png" alt="Panel pressure coefficients"><figcaption>Panel pressure coefficients for the Mach 2 reference case.</figcaption></figure>
+            <figure><img src="images/aero-tool-wedge-angle-tradeoff.png" alt="Wedge-angle aerodynamic trade study"><figcaption>Wave drag rises sharply as wedge half-angle increases.</figcaption></figure>
+            <figure><img src="images/aero-tool-optimized-geometry.png" alt="Optimized double wedge airfoil geometry"><figcaption>Optimized double-wedge geometry at the selected design point.</figcaption></figure>
+        </div>
+
+        <div class="two-column aero-copy">
+            <article>
+                <h2>Engineering decision</h2>
+                <p>At Mach 2 and 2 degrees angle of attack, increasing wedge half angle from 2 to 10 degrees raised lift coefficient from 0.08082 to 0.08545, while wave drag coefficient increased from 0.00565 to 0.07604. L/D fell from 14.3 to 1.12, making thickness the dominant variable in the final search.</p>
+            </article>
+            <aside class="result-card">
+                <p class="eyebrow">OPTIMUM ATTACHED SHOCK DESIGN</p>
+                <div><span>Mach</span><strong>1.52</strong></div>
+                <div><span>Angle of attack</span><strong>2 deg</strong></div>
+                <div><span>Wedge half-angle</span><strong>2 deg</strong></div>
+                <div><span>Maximum L/D</span><strong>14.306</strong></div>
+            </aside>
+        </div>
+        <footer class="page-footer"><span>07</span></footer>
+    </section>
+
+    <section class="page archive-page visual-archive-page">
+        <header class="archive-header">
+            <p class="eyebrow">05-13</p>
+            <h1>Additional projects</h1>
+        </header>
+
+        <div class="visual-project-grid">
+            <article class="visual-project-card">
+                <figure><img src="images/print/rocket_photo_print.jpg" alt="Completed payload-integrated model rocket"></figure>
+                <div><p class="project-number">05 </p><h2>Payload-Integrated Rocket</h2><p>Designed and revised a 3D printed altimeter payload bay, supported manufacturing, and flight tested the rocket to 119 ft against a 125 ft target.</p></div>
+            </article>
+
+            <article class="visual-project-card">
+                <figure><img src="images/ballhawkfinalrender.png" alt="Final BallHawk mechanical assembly"></figure>
+                <div><p class="project-number">06</p><h2>BallHawk Mechanical Design</h2><p>Developed a multi component robot chassis and drivetrain through iterative SolidWorks modeling, geometry refinement, and assembly integration.</p></div>
+            </article>
+
+            <article class="visual-project-card">
+                <figure><img src="images/drone-mbse-trade-study.png" alt="Urban drone delivery mission trade study"></figure>
+                <div><p class="project-number">07</p><h2>Urban Drone Delivery MBSE</h2><p>Built a traceable SysML model connecting mission requirements, UAV architecture, operating behavior, performance equations, and scenario based feasibility.</p></div>
+            </article>
+
+            <article class="visual-project-card">
+                <figure><img src="images/hyades-whole-cluster-ffd.png" alt="Flare frequency distribution for the Hyades cluster"></figure>
+                <div><p class="project-number">08</p><h2>Stellar Flare Activity</h2><p>Analyzed TESS light curves from the Hyades cluster and built flare frequency distributions to compare activity across cadence and Gaia BP-RP color.</p></div>
+            </article>
+        </div>
+        <footer class="page-footer"><span>ADDITIONAL PROJECTS</span><span>08</span></footer>
+    </section>
+
+    <section class="page archive-page compact-archive-page">
+
+        <div class="compact-project-list">
+            <article class="compact-project-card with-image">
+                <figure><img src="images/wind-tunnel-shock-angle.png" alt="Reduced-scale wind tunnel shock-angle analysis"></figure>
+                <div><p class="project-number">09 </p><h2>Reduced-Scale Wind Tunnel Design</h2><p>Designed reduced scale test conditions using Reynoldsnumber similarity to reproduce full scale aerodynamic behavior within facility operating constraints.</p></div>
+            </article>
+
+            <article class="compact-project-card with-image">
+                <figure><img src="images/touchstone-dimensional-verification.png" alt="Dimensional verification of a CAD benchmark model"></figure>
+                <div><p class="project-number">10 </p><h2>CAD Evaluation &amp; AI Training Work</h2><p>Authored detailed CAD tasks and rubrics, then evaluated models for dimensional accuracy, feature quality, completeness, and instruction following.</p></div>
+            </article>
+
+            <article class="compact-project-card">
+                <div><p class="project-number">11</p><h2>Formula SAE Front &amp; Rear Wing Aerodynamics</h2><p>Designed and CFD validated aerodynamic assemblies across ride height and angle of attack configurations.</p></div>
+            </article>
+
+            <article class="compact-project-card">
+                <div><p class="project-number">12</p><h2>Mars Drone CFD Study</h2><p>Investigated rotor performance in Earth and Mars atmospheric conditions through a large CFD simulation campaign.</p></div>
+            </article>
+
+            <article class="compact-project-card">
+                <div><p class="project-number">13</p><h2>CubeSat Structure &amp; Attitude Control</h2><p>Combined spacecraft structural design and FEA with a MATLAB/Simulink reaction wheel model for three axis attitude stabilization.</p></div>
+            </article>
+        </div>
+        <footer class="page-footer"><span>ADDITIONAL PROJECTS</span><span>09</span></footer>
+    </section>
+
+</main>
+</body>
+</html>
